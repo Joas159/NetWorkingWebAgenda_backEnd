@@ -1,0 +1,20 @@
+npm init -y ( package json )
+
+.gitIgnore -> + node_modules
+
+src folder
+
+index.js file
+
+npm install express + importação + instanciação
+
+ex.: 
+const express = require("express"); /*requerimento*/
+const libraryExpress = express(); /*instanciação*/
+
+
+lodash
+npm install -D nodemon [-D for DevDependencies] -->> edit "scripts" e.g : "dev": "node ./src/index.js" -->>
+npm run dev
+
+terminal -->> "sudo npm install" (verificar geral p/ determinar quais packages estão faltando)
