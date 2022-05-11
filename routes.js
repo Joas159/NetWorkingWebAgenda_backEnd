@@ -9,7 +9,6 @@ const {ctrl_listPessoas} = require('./controllers/listagens/listPessoas');
 const {ctrl_listCompromissos} = require('./controllers/listagens/listCompromissos');
 const {ctrl_mudarSenha} = require('./controllers/configsUsers/mudarSenha');
 const {ctrl_mudarFoto} = require('./controllers/configsUsers/mudarFoto');
-const {ctrl_fimLogin} = require('./controllers/configsUsers/fimLogin');
 
 // rota raiz
 routes.get('/home', ctrl_home);
