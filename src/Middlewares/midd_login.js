@@ -8,7 +8,8 @@ const midd_login = async (req, res, next) => {
     if (!email || !senha) {
         return res
             .status(400)
-            .json({ mensagem: "Campo(s) Obrigatório(s) Não Preenchido(s)" });
+            .json({ mensagem: "Campo(s) Obrigatório(s) Não Preenchido(s)" 
+        });
     }
 }
 
