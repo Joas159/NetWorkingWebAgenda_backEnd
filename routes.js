@@ -30,16 +30,13 @@ routes.post('/cadAtualizacao', ctrl_cadAtualizacao );
 routes.get('/listPessoas', ctrl_listPessoas);
 
 //listar compromissos
-routes.get('/listPessoas', ctrl_listCompromissos);
+routes.get('/listCompromissos', ctrl_listCompromissos);
 
 //alterar senha de acesso 
 routes.put('/mudarSenha', ctrl_mudarSenha);
 
 //alterar foto de perfil
 routes.put('/mudarFoto', ctrl_mudarFoto);
-
-//encerrar login
-routes.put('/fimLogin', ctrl_fimLogin);
 
 module.exports = {
     routes
