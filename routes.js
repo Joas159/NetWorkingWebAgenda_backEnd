@@ -9,9 +9,14 @@ const {ctrl_listPessoas} = require('./controllers/listagens/listPessoas');
 const {ctrl_listCompromissos} = require('./controllers/listagens/listCompromissos');
 const {ctrl_mudarSenha} = require('./controllers/configsUsers/mudarSenha');
 const {ctrl_mudarFoto} = require('./controllers/configsUsers/mudarFoto');
+const {midd_login} = require('././src/Middlewares/midd_login');
+const {ctrl_login} = require('./controllers/ctrl_login');
 
 // rota raiz
 routes.get('/home', ctrl_home);
+
+// middleware Login
+routes.post('/login', midd_login, ctrl_login);
 
 //cadastrar usuário
 routes.post('/cadUsuario', ctrl_cadUsuario );
