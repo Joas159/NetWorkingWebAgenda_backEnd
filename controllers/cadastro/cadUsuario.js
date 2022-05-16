@@ -13,7 +13,17 @@ const ctrl_cadUsuario = async (req, res) => {
     const hashSenha = (await pwd.hash(userPassword)).toString("hex");
 
     const query = "insert into usuarios (nome, sobrenome, celular, email, senha) values ($1, $2, $3, $4, $5)";
-    const processoQuery = await conexao.query(query, [ nome, sobrenome, celular, email, hashSenha ]);
+    const processoQuery = await conexao.query(query, [nome, sobrenome, celular, email, hashSenha]);
+
+    try {
+        if (processoQuery.rowCount === 0) {
+           return res.status(400).json("Usuário não foi cadastrado!");
+        }
+
+        return res.status(200).json("Usuário cadastrado com sucesso!");
+    } catch (error) {
+        console.log(error.message);
+    }
 }
 
 module.exports = {
