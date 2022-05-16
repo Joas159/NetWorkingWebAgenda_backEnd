@@ -1,14 +1,14 @@
 const conexao = require("../../src/connections");
 
 const ctrl_cadAtualizacao = async (req, res) => {
-    const { dataHoraAtualizacao, pessoa, descricao } = req.body;
+    const { data_atualizacao, pessoa_perfil, descricao, print_atualizacao } = req.body;
 
-    if (!dataHoraAtualizacao || !pessoa || !descricao) {
+    if (!data_atualizacao || !pessoa_perfil || !descricao) {
         return res.status(400).json({ Mensagem: "Parâmetro(s) Obrigatório(s) Não Informado(s)." });
     }
 
-    const query = "insert into atualizacao (dataHoraAtualizacao, pessoa, descricao) values ($1, $2, $3)";
-    const processoQuery = await conexao.query(query, [ dataHoraAtualizacao, pessoa, descricao ]);
+    const query = "insert into atualizacao (data_atualizacao, pessoa_perfil, descricao, print_atualizacao) values ($1, $2, $3, $4)";
+    const processoQuery = await conexao.query(query, [ data_atualizacao, pessoa_perfil, descricao, print_atualizacao ]);
 
 }
 

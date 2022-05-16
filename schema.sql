@@ -6,9 +6,11 @@ CREATE TABLE usuarios (
   sobrenome VARCHAR(190) NOT NULL,
   celular INTEGER,
   email VARCHAR(80) UNIQUE,
-  senha VARCHAR(20) NOT NULL
+  senha VARCHAR(500) NOT NULL
 );
 
+drop table pessoas;
+drop table usuarios;
 
 INSERT INTO usuarios
 (nome, sobrenome, celular, email, senha)
@@ -20,13 +22,15 @@ CREATE TABLE pessoas (
   nome VARCHAR(190) NOT NULL,
   perfil VARCHAR(30) NOT NULL,
   tematica VARCHAR(30),
-  dataContatoInicial DATE NOT NULL, 
-  aniversario DATE NOT NULL, 
+  dt_contato_inicial DATE NOT NULL, 
+  dt_aniversario DATE NOT NULL, 
   telefone VARCHAR(20) NOT NULL,
   email VARCHAR(80) UNIQUE,
-  dataUltimaAtualizacao DATE NOT NULL, 
-  tempoRecorr TIME NOT NULL
+  foto_perfil VARCHAR (20),
+  dt_ultima_atualizacao DATE NOT NULL, 
+  tempo_recorr integer NOT NULL
 );
+
 
 CREATE TABLE compromissos (
   id SERIAL PRIMARY KEY,

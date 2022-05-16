@@ -18,7 +18,7 @@ const ctrl_login = async (req, res) => {
         }
     );
 
-    return res.send(token);
+    return res.status(200).json({Retorno:token});
 }
 
 module.exports = {
