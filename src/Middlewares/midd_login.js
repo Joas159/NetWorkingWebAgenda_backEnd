@@ -23,7 +23,6 @@ const midd_login = async (req, res, next) => {
 
     const dataUser = usuario.rows[0];
 
-
     //checagem de correspondência
     const checkSenha = await pwd.verify(
         Buffer.from(senha),
@@ -44,9 +43,7 @@ const midd_login = async (req, res, next) => {
             } catch { }
         break;
     }
-
     next();
-
 }
 
 module.exports = {

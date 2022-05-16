@@ -1,7 +1,24 @@
-const conexao = require("../../src/connections");
+//const conexao = require("../../src/connections");
+const jwt = require("jsonwebtoken");
+const secretKey = require("../src/passPhraseJwt");
 
 const ctrl_login = async (req, res) => {
-    return res.status(200).json('teste de conexão do Login');
+
+    const { email, senha } = req.body;
+
+    //-- Geração de Token --
+    const token = jwt.sign(
+        {
+            email: email,
+            senha: senha,
+        },
+        secretKey,
+        {
+            expiresIn: "10m",
+        }
+    );
+
+    return res.send(token);
 }
 
 module.exports = {
