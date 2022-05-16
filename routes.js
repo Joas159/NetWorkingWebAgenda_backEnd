@@ -42,6 +42,7 @@ routes.put('/mudarSenha', ctrl_mudarSenha);
 //alterar foto de perfil
 routes.put('/mudarFoto', ctrl_mudarFoto);
 
+
 module.exports = {
     routes
 }

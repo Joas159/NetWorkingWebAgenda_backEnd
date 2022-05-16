@@ -1,7 +1,16 @@
 const conexao = require("../../src/connections");
 
 const ctrl_cadPessoa = async (req, res) => {
-    return res.status(200).json('teste de conexão do Cadastro de Pessoas');
+    const { nome, perfil, tematica, dt_contato_inicial, dt_aniversario, telefone,
+        email, fotoPerfil, dt_ultima_atualizacao, tempoRecorr } = req.body;
+
+    if (!nome || !perfil || !dt_contato_inicial || !dt_aniversario || !telefone || !email || !dt_ultima_atualizacao || !tempoRecorr) {
+        return res.status(400).json({ Mensagem: "Parâmetro(s) Obrigatório(s) Não Informado(s)." });
+    }
+
+    const query = "insert into pessoas (nome, perfil, tematica, dt_contato_inicial, dt_aniversario, telefone, email, foto, dt_ultima_atualizacao, tempoRecorr) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
+    const processoQuery = await conexao.query(query, [ nome, perfil, tematica, dt_contato_inicial, dt_aniversario, telefone, email, fotoPerfil, dt_ultima_atualizacao, tempoRecorr ]);
+
 }
 
 module.exports = {
