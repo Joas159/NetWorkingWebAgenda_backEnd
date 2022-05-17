@@ -18,3 +18,38 @@ npm install -D nodemon [-D for DevDependencies] -->> edit "scripts" e.g : "dev":
 npm run dev
 
 terminal -->> "sudo npm install" (verificar geral p/ determinar quais packages estão faltando)
+
+---------------------------
+estrutura para listagem de pessoas e compromissos
+---------------------------
+
+const root = document.querySelector('body');
+
+fetch('https://jsonplaceholder.typicode.com/comments').then((resposta) => {
+    const promessaBody = resposta.json();
+
+    promessaBody.then((respostaEfetiva) => {
+
+        respostaEfetiva.forEach(coment => {
+            
+            const DIVcoment = document.createElement('div');
+            DIVcoment.classList.add('stComentario');
+            
+            const nomePessoa = document.createElement('p');
+            nomePessoa.innerHTML = (`Nome.:<br/> ${coment.name}<br/>`);
+            //`Nome.: ${coment.name}`
+
+            const emailPessoa = document.createElement('p');
+            emailPessoa.innerHTML = (`Email.:<br/>${coment.email}<br/>`);
+            //(`Email.: ${coment.email}`);
+
+            const comentarioPessoa = document.createElement('p');
+            comentarioPessoa.innerHTML = (`Comentário.:<br/>${coment.body}<br/>`);
+            //(`Comentário.: ${coment.body}`);
+
+            DIVcoment.append(nomePessoa, emailPessoa, comentarioPessoa);
+            root.append(DIVcoment);
+        });
+
+    });
+});
