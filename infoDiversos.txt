@@ -1,3 +1,11 @@
+_______________________________________
+heroku (backEnd)
+netlify (frontEnd)
+vercel (back/front)
+________________________________________
+
+recomendações -->> desing patterns... DAO || DTO || ORM || repositório || mappers || 
+
 npm init -y ( package json )
 
 .gitIgnore -> + node_modules

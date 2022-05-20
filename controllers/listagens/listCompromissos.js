@@ -1,9 +1,6 @@
 const conexao = require("../../src/connections");
 const jwt = require("jsonwebtoken");
 
-// const securePassword = require("secure-password");
-// const pwd = securePassword();
-
 const secretKey = require("../../src/passPhraseJwt");
 
 const ctrl_listCompromissos = async (req, res) => {
