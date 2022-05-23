@@ -1,4 +1,4 @@
-const conexao = require("../../src/connections");
+const conexao = require("../../connections");
 const securePassword = require("secure-password");
 const pwd = securePassword();
 
@@ -17,7 +17,7 @@ const ctrl_cadUsuario = async (req, res) => {
 
     try {
         if (processoQuery.rowCount === 0) {
-           return res.status(400).json("Usuário não foi cadastrado!");
+            return res.status(400).json("Usuário não foi cadastrado!");
         }
 
         return res.status(200).json("Usuário cadastrado com sucesso!");

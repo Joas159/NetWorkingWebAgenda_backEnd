@@ -1,6 +1,6 @@
 //const conexao = require("../../src/connections");
 const jwt = require("jsonwebtoken");
-const secretKey = require("../src/passPhraseJwt");
+const secretKey = require("../passPhraseJwt");
 
 const ctrl_login = async (req, res) => {
 
@@ -18,7 +18,7 @@ const ctrl_login = async (req, res) => {
         }
     );
 
-    return res.status(200).json({Retorno:token});
+    return res.status(200).json({ Retorno: token });
 }
 
 module.exports = {

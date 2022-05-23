@@ -1,4 +1,4 @@
-const conexao = require("../../src/connections");
+const conexao = require("../../connections");
 
 const ctrl_cadAtualizacao = async (req, res) => {
     const { data_atualizacao, pessoa_perfil, descricao, print_atualizacao } = req.body;
@@ -8,7 +8,7 @@ const ctrl_cadAtualizacao = async (req, res) => {
     }
 
     const query = "insert into atualizacao (data_atualizacao, pessoa_perfil, descricao, print_atualizacao) values ($1, $2, $3, $4)";
-    const processoQuery = await conexao.query(query, [ data_atualizacao, pessoa_perfil, descricao, print_atualizacao ]);
+    const processoQuery = await conexao.query(query, [data_atualizacao, pessoa_perfil, descricao, print_atualizacao]);
 
 }
 

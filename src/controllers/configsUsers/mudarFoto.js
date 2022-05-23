@@ -1,4 +1,4 @@
-const conexao = require("../../src/connections");
+const conexao = require("../../connections");
 
 const ctrl_mudarFoto = async (req, res) => {
     return res.status(200).json('teste de conexão da alteração de foto do perfil');
