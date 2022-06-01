@@ -1,4 +1,4 @@
-const conexao = require("../../src/connections");
+const conexao = require("../../connections");
 
 const ctrl_cadPessoa = async (req, res) => {
     const { nome, perfil, tematica, dt_contato_inicial, dt_aniversario, telefone,
@@ -9,7 +9,7 @@ const ctrl_cadPessoa = async (req, res) => {
     }
 
     const query = "insert into pessoas (nome, perfil, tematica, dt_contato_inicial, dt_aniversario, telefone, email, foto_perfil, dt_ultima_atualizacao, tempo_recorr) values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)";
-    const processoQuery = await conexao.query(query, [ nome, perfil, tematica, dt_contato_inicial, dt_aniversario, telefone, email, foto_perfil, dt_ultima_atualizacao, tempo_recorr ]);
+    const processoQuery = await conexao.query(query, [nome, perfil, tematica, dt_contato_inicial, dt_aniversario, telefone, email, foto_perfil, dt_ultima_atualizacao, tempo_recorr]);
 
 }
 

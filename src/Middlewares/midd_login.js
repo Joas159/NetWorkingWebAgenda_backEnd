@@ -10,7 +10,7 @@ const midd_login = async (req, res, next) => {
             .status(400)
             .json({
                 mensagem: "Campo(s) Obrigatório(s) Não Preenchido(s)"
-        });
+            });
     }
 
     //checagem de existência do usuário
@@ -41,7 +41,7 @@ const midd_login = async (req, res, next) => {
                 const query = "update usuarios set senha = $1 where email = $2";
                 await conexao.query(query, [improvedHash, email]);
             } catch { }
-        break;
+            break;
     }
     next();
 }
